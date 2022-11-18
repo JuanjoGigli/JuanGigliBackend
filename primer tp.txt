@@ -1,0 +1,48 @@
+let mascotas =['perro', 'gato']
+libros = [{Nombre:'el principito', autor: 'jaider Niño'}, 
+          {nombre: 'harry potter', autor:'jaider niño'}]
+
+          class Usuario{
+    constructor(nombre,apellido,libros,mascotas){
+        this.nombre = nombre
+        this.apellido = apellido
+        this.libros = libros 
+        this.mascotas = mascotas
+    
+    }
+    getFullName(){
+        return(
+            console.log(this.nombre + this.apellido)
+        )
+    }
+
+    getBook(){
+        return(
+            console.log(this.libros)
+        )
+    }
+
+    addBooks(){
+
+    }
+
+    addMascotas(){
+
+    }
+
+    getBooksName(){
+        
+    }
+
+    countMascotas(){
+        return (
+            console.log(mascotas.length)
+        )
+    }
+}
+
+const Usuario1 = new Usuario ('jaider','Niño', libros, mascotas)
+//Usuario1.countMascotas()
+//Usuario1.getbook()
+//Usuario1.getFullName()
+Usuario1.getBooksName()
