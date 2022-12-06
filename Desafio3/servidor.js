@@ -44,10 +44,12 @@ class Container {
   }
 
   getRandom() {
+    const randObj= fs.readFileSync(this.file,'utf-8')
       let randomNumber = Math.trunc(Math.random()* 3 + 1);
-      const randomObject = JSON.parse(this.file)
-      console.log(randomObject)
-      return JSON.parse(randomObject) 
+      const randomObjects = JSON.parse(randObj)
+      console.log(randomObjects)
+      const result = randomObjects.filter(randomObject => randomObject.id == randomNumber)
+      return result
   }
 }
   
