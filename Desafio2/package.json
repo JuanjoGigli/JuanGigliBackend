@@ -1,19 +1,11 @@
 {
-  "name": "desafioentregable2",
+  "name": "desafio2",
   "version": "1.0.0",
-  "description": "juan gigli",
+  "description": "",
   "main": "desafio2.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/JuanjoGigli/JuanGigliBackend.git"
-  },
-  "author": "juan gigli",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/JuanjoGigli/JuanGigliBackend/issues"
-  },
-  "homepage": "https://github.com/JuanjoGigli/JuanGigliBackend#readme"
+  "author": "Juan Gigli",
+  "license": "ISC"
 }
