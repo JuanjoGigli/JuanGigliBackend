@@ -31,14 +31,14 @@ app.use("/api/productos", productRouter);
 app.use("/api/productos/:id", productRouter)
 
 // GET request que retorna todo el array de productos en formato JSON.
-apiProductRouter.get('/', (req, res) => {
-    res.json(arrayProducts);
+productRouter.get('/', (req, res) => {
+    res.json(arrayProduct);
 });
 
 // GET request que recibe ID para retornar el objeto que coincida con el ID indicado.
-apiProductRouter.get('/:id', (req, res) => {
+productRouter.get('/:id', (req, res) => {
     const { id } = req.params;                                          
-    let objectById = arrayProducts.find(element => element.id == id);   
+    let objectById = arrayProduct.find(element => element.id == id);   
     if(objectById != undefined){                                        
         res.json(objectById);                                           
     } else {
@@ -48,35 +48,35 @@ apiProductRouter.get('/:id', (req, res) => {
 
 // POST request que recibe en formato JSON las key de un nuevo producto a ser agregado.
 // En nuevo ID para el producto es generado en este metodo tembien.
-apiProductRouter.post('/', (req, res) => {
+productRouter.post('/', (req, res) => {
     const { nombre,precio  } = req.body;                       
-    const newId = arrayProducts.length + 1;                 
+    const newId = arrayProduct.length + 1;                 
     const newObj = { id: newId, name: name, precio: precio }; 
-    arrayProducts.push(newObj);                             
+    arrayProduct.push(newObj);                             
     res.json(newObj);                                       
 });
 
 // PUT request que actualiza un producto por su ID.
-apiProductRouter.put('/:id', (req, res) => {
+productRouter.put('/:id', (req, res) => {
     const { id } = req.params;
     const { name, precio } = req.body;
 
-    const indexObjet = arrayProducts.findIndex(element => element.id == id);
+    const indexObjet = arrayProduct.findIndex(element => element.id == id);
     if ( indexObjet != -1 ) {
-        arrayProducts[indexObjet].name  = name;
-        arrayProducts[indexObjet].image = imgurl;
-        res.json(arrayProducts[indexObjet]);
+        arrayProduct[indexObjet].name  = name;
+        arrayProduct[indexObjet].image = imgurl;
+        res.json(arrayProduct[indexObjet]);
     } else {
         res.send("NOT FOUND - NOT UPDATED"); 
     }
 });
 
 // DELETE request que borra el producto del ID indicado si existe.
-apiProductRouter.delete('/:id', (req, res) => {
+productRouter.delete('/:id', (req, res) => {
     const { id } = req.params;
-    const indexObjet = arrayProducts.findIndex(element => element.id == id);    
+    const indexObjet = arrayProduct.findIndex(element => element.id == id);    
     if ( indexObjet != -1 ) {                                                   
-        const deletedProd = arrayProducts.splice(indexObjet, 1);                
+        const deletedProd = arrayProduct.splice(indexObjet, 1);                
         res.json(deletedProd);                                                  
     } else {
         res.send("NOT FOUND - NOT DELETED");                                    
