@@ -22,6 +22,8 @@ const express = require("express");
 const app = express();
 
 app.use(express.json());
+app.use(express.static('public'))
+app.use(express.urlencoded({extended: true}));
 
 const productRouter = Router(); 
 
@@ -48,23 +50,22 @@ productRouter.get('/:id', (req, res) => {
 
 // POST request que recibe en formato JSON las key de un nuevo producto a ser agregado.
 // En nuevo ID para el producto es generado en este metodo tembien.
-productRouter.post('/', (req, res) => {
-    const { nombre,precio  } = req.body;                       
+productRouter.post('/api/productos', (req, res) => {
+    const { id,nombre,precio  } = req.body;                       
     const newId = arrayProduct.length + 1;                 
-    const newObj = { id: newId, name: name, precio: precio }; 
+    const newObj = { id: newId, nombre: nombre, precio: precio }; 
     arrayProduct.push(newObj);                             
-    res.json(newObj);                                       
+    res.json(newObj);                                        
 });
 
 // PUT request que actualiza un producto por su ID.
 productRouter.put('/:id', (req, res) => {
     const { id } = req.params;
-    const { name, precio } = req.body;
+    const {  nombre, precio } = req.body;
 
     const indexObjet = arrayProduct.findIndex(element => element.id == id);
     if ( indexObjet != -1 ) {
-        arrayProduct[indexObjet].name  = name;
-        arrayProduct[indexObjet].image = imgurl;
+        arrayProduct[indexObjet].nombre  = nombre;
         res.json(arrayProduct[indexObjet]);
     } else {
         res.send("NOT FOUND - NOT UPDATED"); 
