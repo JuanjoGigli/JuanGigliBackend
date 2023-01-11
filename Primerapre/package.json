@@ -1,28 +1,13 @@
 {
-  "name": "primerpre",
+  "name": "primerapre",
   "version": "1.0.0",
-  "description": "Primer Pre Enterea Trabajo Final",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "start":"node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": ""
-  },
-  "keywords": [
-    "CoderHouse",
-    "TP",
-    "Final",
-    "Pre-entrega"
-  ],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": ""
-  },
-  "homepage": "",
   "dependencies": {
     "express": "^4.18.2"
   }
