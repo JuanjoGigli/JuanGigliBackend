@@ -36,9 +36,8 @@ socket.on('products', data => {
   data.forEach(element => {
     html = `${html}
     <div class="table-line">
-    <p class="nameTb">${element.name}</p>
-    <p class="priceTd">$ ${element.price}</p>
-    <img src="${element.image}" alt="${element.name}">
+    <p class="nameTb">${element.nombre}</p>
+    <p class="priceTd">$ ${element.precio}</p>
     </div>`;
   });
 
@@ -49,9 +48,8 @@ socket.on('product-added', message => {
   let html = document.getElementById('productList').innerHTML;
 
   html += `<div class="table-line">
-  <p class="nameTb">${message.name}</p>
-  <p class="priceTd">$ ${message.price}</p>
-  <img src="${message.image}" alt="${message.name}">
+  <p class="nameTb">${message.nombre}</p>
+  <p class="priceTd">$ ${message.precio}</p>
   </div>`;
   
   document.getElementById('productList').innerHTML = `${html}`;
@@ -59,9 +57,8 @@ socket.on('product-added', message => {
 
 const sendProduct = (that) => {
   const message = {
-    name: that.name.value,
-    price: that.price.value,
-    image: that.image.value
+    name: that.nombre.value,
+    price: that.precio.value
   };
   socket.emit('new-product', message);
 };
