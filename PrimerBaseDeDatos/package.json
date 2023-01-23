@@ -1,0 +1,38 @@
+{
+  "name": "primerbasededatos",
+  "version": "1.0.0",
+  "description": "SQL-Lite3-MariaDB",
+  "main": "index.js",
+  "scripts": {
+    "socketServer": "node src/socketServer.js",
+    "rst_dbs": "node SQL-Querys/SET_SQLMariaDB.js && node Lite-Querys/SET_SQLiteDB.js",
+    "rst_litedb": "node Lite-Querys/SET_SQLiteDB.js",
+    "rst_mariadb": "node SQL-Querys/SET_SQLMariaDB.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+    "Base",
+    "de",
+    "datos",
+    "y",
+    "persistencia",
+    "de",
+    "informacion."
+  ],
+  "author": "juan gigi",
+  "license": "ISC",
+  "bugs": { 
+  },
+  "homepage": "",
+  "dependencies": {
+    "express": "^4.18.2",
+    "knex": "^2.4.0",
+    "mysql": "^2.18.1",
+    "socket.io": "^4.5.4",
+    "sqlite3": "^5.1.4"
+  }
+}
