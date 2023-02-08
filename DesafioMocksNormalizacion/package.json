@@ -1,0 +1,30 @@
+{
+  "name": "desafiomocksnormalizacion",
+  "version": "1.0.0",
+  "description": "Mocks de datos para testing y normalizaciom.",
+  "main": "serverMocks.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git"
+    
+  },
+  "type": "module",
+  "keywords": [
+    "Mocks",
+    "Testing",
+    "Normalizacion"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+   
+  },
+
+  "dependencies": {
+    "@faker-js/faker": "^7.6.0",
+    "express": "^4.18.2",
+    "normalizr": "^3.6.2"
+  }
+}
